@@ -1,0 +1,106 @@
+
+ros.org	About | Support | Status | answers.ros.org	
+Search:  
+  Submit
+DocumentationBrowse SoftwareNewsDownload
+usb_cam
+Wiki
+Distributions
+ROS/Installation
+ROS/Tutorials
+RecentChanges
+usb_cam
+Page
+Edit (Text)
+Edit (GUI)
+Info
+Subscribe
+Add Link
+Attachments
+ 
+User
+nickfragale
+Settings
+Logout
+ electric fuerte groovy hydro indigo jade   Documentation Status
+
+Package Links
+Code API
+Troubleshooting
+FAQ
+Changelog
+Change List
+Reviews
+Dependencies (6)
+Used by (1)
+Jenkins jobs (12)
+Package Summary
+ Released  Continuous integration  Documented
+
+A ROS Driver for V4L USB Cameras
+
+Maintainer status: maintained
+Maintainer: Russell Toris <rctoris AT wpi DOT edu>
+Author: Benjamin Pitzer <benjamin.pitzer AT bosch DOT com>
+License: BSD
+Bug / feature tracker: https://github.com/bosch-ros-pkg/usb_cam/issues
+Source: git https://github.com/bosch-ros-pkg/usb_cam.git (branch: master)
+
+Contents
+
+Nodes
+usb_cam_node
+Published Topics
+Parameters
+Related packages
+ 
+
+Nodes
+
+usb_cam_node
+The usb_cam_node interfaces with standard USB cameras (e.g. the Logitech Quickcam) using libusb_cam and publishes images as sensor_msgs::Image. Uses the image_transport library to allow compressed image transport.
+Published Topics
+
+~<camera_name>/image (sensor_msgs/Image)
+The image
+Parameters
+
+~video_device (string, default: "/dev/video0")
+The device the camera is on.
+~image_width (integer, default: 640)
+Image width
+~image_height (integer, default: 480)
+Image height
+~pixel_format (string, default: "mjpeg")
+Possible values are mjpeg, yuyv, uyvy
+~io_method (string, default: "mmap")
+Possible values are mmap, read, userptr
+~camera_frame_id (string, default: "head_camera")
+The camera's tf frame
+~framerate (integer, default: 30)
+The required framerate
+~contrast (integer, default: 32)
+Contrast of video image (0-255)
+~brightness (integer, default: 32)
+Brightness of video image (0-255)
+~saturation (integer, default: 32)
+Saturation of video image (0-255)
+~sharpness (integer, default: 22)
+Sharpness of video image (0-255)
+~autofocus (boolean, default: false)
+Enable camera's autofocus
+~focus (integer, default: 51)
+If autofocus is disabled, the focus of the camera (0=at infinity)
+~camera_info_url (string, default: )
+An url to the camera calibration file that will be read by the CameraInfoManager class
+~camera_name (string, default: head_camera)
+The camera name. This must match the name in the camera calibration
+Related packages
+
+cv_camera - supports image capture from usb cameras using OpenCV
+
+
+
+Wiki: usb_cam (last edited 2016-03-05 02:01:37 by JeremyKerfs)
+Except where otherwise noted, the ROS wiki is licensed under the 
+Creative Commons Attribution 3.0 | Find us on Google+
